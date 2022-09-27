@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Orelo";
+  src: local("Orelo"),
+    /* Если не получилось, загрузит woff2 */ url("../fonts/Orelo.woff2")
+      format("woff2"),
+    /* Если браузер не поддерживает woff2, загрузит woff */
+      url("../fonts/Orelo.woff") format("woff");
+}
+
+:root {
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 35;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,10 +21,10 @@ body {
   font-family: "Noto Sans Mono", monospace;
   width: 100%;
   height: 100vh;
-  background: url("../img/main-bg.png") center no-repeat;
+  background: url("../img/main-bg.jpg") center no-repeat;
   background-size: cover;
-  color: #1b1b1b;
   line-height: 1.6;
+  position: relative;
 }
 
 *,
@@ -31,12 +45,9 @@ h2 {
   font-size: 20px;
 }
 
-a {
-  color: #1b1b1b;
-}
-
 a:hover {
-  color: #2eb8cf;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Container */
@@ -46,6 +57,21 @@ a:hover {
   max-width: 1200px;
 
   margin: 0 auto;
+}
+
+/* Mouse */
+
+.mouse--follower {
+  width: 50px;
+  height: 50px;
+  background-color: #030303;
+  opacity: 0.8;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s;
 }
 
 /* Header */
@@ -58,7 +84,7 @@ a:hover {
 
 .header-inner {
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
   margin: 30px 30px;
 }
@@ -66,6 +92,50 @@ a:hover {
 .header-logo {
   color: white;
   width: 700px;
+}
+
+.anima-text {
+  font-size: 16px;
+  display: inline;
+  width: max-content;
+  position: relative;
+  font-weight: 400;
+}
+
+.anima-text::before,
+.anima-text::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.anima-text::after {
+  width: 0.125em;
+  background: white;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 3s forwards,
+    blink 750ms steps(35) infinite;
+}
+
+.anima-text::before {
+  background-color: #181818;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 3s forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
 }
 
 /* Nav */
@@ -78,4 +148,47 @@ a:hover {
   color: #1b1b1b;
   text-decoration: none;
   transition: color 0.2s linear;
+}
+
+/* Services */
+
+.content-services {
+  position: absolute;
+  font-size: 16px;
+  color: white;
+  margin: 0px 30px;
+  z-index: 1;
+}
+
+/* Content */
+
+.content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-inner {
+  position: relative;
+  font-family: "Orelo", monospace;
+  font-size: 150px;
+  text-align: center;
+
+  background: #5ef763;
+  background: linear-gradient(to right, #5ef763 0%, #25ebf5 50%, #e810a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  color: white;
+  margin: 0px 30px;
 }
