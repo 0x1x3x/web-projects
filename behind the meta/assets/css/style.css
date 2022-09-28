@@ -21,10 +21,14 @@ body {
   font-family: "Noto Sans Mono", monospace;
   width: 100%;
   height: 100vh;
-  background: url("../img/main-bg.jpg") center no-repeat;
-  background-size: cover;
+  background-position: 0 35%;
+  background-size: 50vw 200vh;
+  background: url("../img/main-2.jpg") left no-repeat;
+
   line-height: 1.6;
   position: relative;
+
+  /* cursor: none; */
 }
 
 *,
@@ -61,19 +65,39 @@ a:hover {
 
 /* Mouse */
 
-.mouse--follower {
-  width: 30px;
-  height: 30px;
-  background-color: #030303;
-  opacity: 0.8;
-  border-radius: 50%;
-  position: absolute;
+.cursor {
+  position: fixed;
+  z-index: 999;
+  background: #41eddb;
+  transform: translateX(-50%, -50%);
+  width: 20px;
+  height: 20px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 50%;
 
-  z-index: 1000;
-  cursor: none;
+  box-shadow: 0 0 20px #41eddb, 0 0 60px #41eddb, 0 0 100px #41eddb;
+  animation: colors 5s infinite;
+}
+
+.cursor::before {
+  z-index: 999;
+  content: "";
+  background: #41eddb;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translateX(-50%, -50%);
+  border-radius: 50%;
+}
+
+@keyframes colors {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 /* Header */
@@ -191,14 +215,49 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Shapes */
+
+.circle-1 {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  width: 250px;
+  height: 250px;
+  background-color: purple;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 70%;
+}
+
+.circle-2 {
+  position: absolute;
+  top: 21%;
+  left: 19%;
+  width: 180px;
+  height: 180px;
+  background-color: yellow;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 70%;
+}
+
+.circle-3 {
+  position: absolute;
+  top: 30%;
+  left: 11%;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(53, 252, 43);
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 70%;
+}
 /* Glass Toggle */
 
 .glass-toggle {
-  margin-top: 2em;
-  padding: 3em;
   width: 960px;
   margin-left: 52.5em;
-  height: 1080px;
+  height: 100vh;
   position: absolute;
 
   background: rgba(255, 255, 255, 0.34);
