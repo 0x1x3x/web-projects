@@ -62,8 +62,8 @@ a:hover {
 /* Mouse */
 
 .mouse--follower {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: #030303;
   opacity: 0.8;
   border-radius: 50%;
@@ -71,7 +71,9 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.1s;
+
+  z-index: 1000;
+  cursor: none;
 }
 
 /* Header */
@@ -93,6 +95,8 @@ a:hover {
   color: white;
   width: 700px;
 }
+
+/* Anima Text */
 
 .anima-text {
   font-size: 16px;
@@ -148,6 +152,7 @@ a:hover {
   color: #1b1b1b;
   text-decoration: none;
   transition: color 0.2s linear;
+  z-index: 10000;
 }
 
 /* Services */
@@ -157,12 +162,13 @@ a:hover {
   font-size: 16px;
   color: white;
   margin: 0px 30px;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Content */
 
 .content {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -185,10 +191,29 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Glass Toggle */
+
+.glass-toggle {
+  margin-top: 2em;
+  padding: 3em;
+  width: 960px;
+  margin-left: 52.5em;
+  height: 1080px;
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.34);
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+}
+
 /* Footer */
 
 .footer {
   position: absolute;
+  bottom: 0;
+
   color: white;
+  padding-bottom: 30px;
   margin: 0px 30px;
 }
