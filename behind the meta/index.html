@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.ico"
+      href="assets/img/favicon.ico"
       type="image/x-icon"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,59 +19,245 @@
     <title>Behind the Meta - Web3 solutions for business</title>
   </head>
   <body>
-    <!--- Cursor --->
-    <div class="cursor"></div>
-    <!--- Cursor --->
+    
     <!--- Header --->
     <header class="header">
       <div class="header-inner">
+
         <div class="header-logo">
-          <strong
-            ><a link="https://behindthemeta.xyz" style="text-decoration: none"
-              >Behind the Meta</a
-            ></strong
-          >
+          <strong>Behind the Meta</strong>
           <p class="anima-text">// We design, We coding, We future.</p>
         </div>
 
-        <nav>
+        
+        <nav class="nav">
           <h3 style="display: none">Menu</h3>
-          <a class="nav_link" href="#">web3.0</a>
-          <a class="nav_link" href="#">blockchain</a>
-          <a class="nav_link" href="#">nft</a>
-          <a class="nav_link" href="#">marketing</a>
+          <button class="nav-btn" type="button" data-tab="#tab_1">
+            web3.0
+          </button>
+          <button class="nav-btn" type="button" data-tab="#tab_2">
+            blockchain
+          </button>
+          <button class="nav-btn" type="button" data-tab="#tab_3">nft</button>
+          <button class="nav-btn" type="button" data-tab="#tab_4">
+            marketing
+          </button>
+          <button class="nav-btn" type="button" data-tab="#tab_5">
+            contact us
+          </button>
+          </nav>
 
-          <a class="nav_link" href="contacts.html">contact us</a>
-        </nav>
+          <!-- mobile menu -->
+        <button class="nav-toggle" id="nav-toggle" type="button">
+          <span class="nav-toggle-item">Menu</span>
+        </button>
+        <!-- mobile menu -->
+
       </div>
     </header>
     <!--- Header --->
-    <!--- Shapes --->
-    <div class="circle-1"></div>
-    <div class="circle-2"></div>
-    <div class="circle-3"></div>
-    <!--- Shapes --->
     <!--- Content --->
     <section class="content">
-      <div class="content-services">
-        <p>Digital strategy</p>
-        <p>User expirience (UX)</p>
-        <p>Web design</p>
-        <p>Solidity building</p>
-        <p>Smart-contract programming</p>
-      </div>
+      
       <div class="container">
+
+        <div class="vanta-canvas" id="vanta-canvas"></div>
         <div class="content-inner">Behind the Meta</div>
+        <div class="glass-toggle"></div>
+      
+        <div class="tabs__content">
+          <div class="tabs__item" id="tab_1">
+            <h2>Web-design</h2>
+            <p>
+              Our studio develops and designs websites in a modern environment 
+              using the latest technologies. At the intersection of web 2 and 
+              web 3 we offer the best solutions required in print design, visual 
+              identity in business, fashion and art.
+            </p>
+            <h2>Mobile-design (UX/UI)</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+            <h2>Mobile-design (UX/UI)</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+
+            <button class="contact-btn"><a href="mailto:behindthemeta@protonmail.com">GET IN TOUCH</a></button>
+          </div>
+    
+          <div class="tabs__item" id="tab_2">
+            <h2>Smart-contract development</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+            <h2>Mobile-design (UX/UI)</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+
+            <button class="contact-btn"><a href="mailto:behindthemeta@protonmail.com">GET IN TOUCH</a></button>
+          </div>
+    
+          <div class="tabs__item" id="tab_3">
+            <h2>Web-design NFT</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+    
+            <h2>NFT Marketing</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+            <h2>Mobile-design (UX/UI)</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              .
+            </p>
+
+            <button class="contact-btn"><a href="mailto:behindthemeta@protonmail.com">GET IN TOUCH</a></button>
+          </div>
+          <div class="tabs__item" id="tab_4">
+            <h2>Social Media</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+            <h2>Mobile-design (UX/UI)</h2>
+            <p>
+              
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here, content
+              here', making it look like readable English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over the
+              years, sometimes by accident, sometimes on purpose (injected humour
+              and the like).
+            </p>
+
+            <button class="contact-btn"><a href="mailto:behindthemeta@protonmail.com">GET IN TOUCH</a></button>
+          </div>
+          <div class="tabs__item" id="tab_5">
+            <h2>Wanna work with us?</h2>
+            <p>
+              
+              chat in <a href="https://wa.me/34678707102">Whatsapp</a>
+              <br/>
+              send an <a href="mailto:behindthemeta@protonmail.com">Email</a>
+              <br/>
+              follow on <a href="https://twitter.com/behind_the_meta">Twitter</a>
+            </p>
+
+            <img class="tab-img" src="assets/img/coding.gif" />
+          </div>
+
       </div>
-      <div class="glass-toggle"></div>
+
+
+      
+      
       <!--- Footer --->
-      <footer class="footer">© 2022</footer>
+      <footer class="footer">© 2022. All rights reserved.</footer>
       <!--- Footer --->
     </section>
     <!--- Content --->
-
+    
     <!--- Scripts --->
-    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/nav-toggle.js"></script>
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/vanta.fog.min.js"></script>
+    <script type="text/javascript">
+      VANTA.FOG({
+        el: "#vanta-canvas",
+        mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  highlightColor: 0x0,
+  midtoneColor: 0xffffff,
+  lowlightColor: 0x0,
+  blurFactor: 0.87,
+  zoom: 0.60,
+      });
+    </script>
     <!--- Scripts --->
   </body>
 </html>
