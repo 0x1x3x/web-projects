@@ -170,7 +170,7 @@ h2 {
   color: transparent;
 
   border: 0;
-  background-color: white;
+  background-color: #181818;
 
   position: absolute;
   top: 35px;
@@ -195,23 +195,23 @@ h2 {
 .nav-toggle-item::before,
 .nav-toggle-item::after {
   content: "";
-  width: 50px;
+  width: 30px;
   height: 3px;
 
   position: absolute;
 
-  background-color: #1b1b1b;
+  background-color: white;
   left: 0;
   z-index: 1;
   transition: transform 0.2s linear;
 }
 
 .nav-toggle-item::before {
-  top: -8px;
+  top: -7.5px;
 }
 
 .nav-toggle-item::after {
-  bottom: -8px;
+  bottom: -9px;
 }
 
 .nav-toggle-item {
@@ -365,15 +365,16 @@ h2 {
   }
 
   .nav {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
+    background-color: #181818;
+    padding-bottom: 10px;
   }
 
   /* Anima Text */
@@ -388,7 +389,7 @@ h2 {
     width: 100%;
   }
 
-  /* Nav */
+  /* Header */
 
   .header {
     background-color: #181818;
@@ -398,38 +399,7 @@ h2 {
     color: white;
   }
 
-  .nav {
-    display: none;
-    text-align: left;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #181818;
-  }
-
-  .nav-btn {
-    color: white;
-    margin-left: 0;
-
-    margin: 15px 0;
-  }
-
-  .tabs__content {
-    left: 0%;
-    top: 30%;
-    width: 100%;
-
-    position: absolute;
-    margin: 0 auto;
-
-    padding: 0 30px;
-
-    background-color: white;
-  }
-
-  .nav.active {
-    display: block;
-  }
+  /* Nav */
 
   .nav_link {
     display: block;
@@ -441,10 +411,36 @@ h2 {
     display: block;
   }
 
+  .nav-btn {
+    color: white;
+    margin-left: 0;
+
+    margin: 15px 0;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  /* Tabs Content */
+
+  .tabs__content {
+    width: 100%;
+
+    position: absolute;
+    margin: 0 auto;
+  }
+
+  .tabs__item.active {
+    padding: 300px 30px 30px 30px;
+    background-color: white;
+  }
+
   /* Content */
 
   .content-inner {
-    display: none;
+    font-size: 100px;
+    padding-top: 50px;
   }
 
   /* Glass Toggle */
