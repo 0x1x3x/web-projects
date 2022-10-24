@@ -175,6 +175,7 @@ a {
   font-size: 20px;
   font-weight: 200;
   text-align: justify;
+  line-height: 1.6;
 }
 
 .gallery {
@@ -207,6 +208,24 @@ a {
 }
 
 .ex-img {
+  float: right;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+/* About Us */
+
+.about-us-text {
+  font-size: 18px;
+  font-weight: 200;
+
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-us-img {
+  width: 40%;
+  height: auto;
   float: right;
   margin-left: 50px;
   margin-bottom: 20px;
