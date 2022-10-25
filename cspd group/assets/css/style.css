@@ -1,0 +1,887 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+
+  color: #1b1b1b;
+  line-height: 1.6;
+}
+
+*,
+*:before *:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+a {
+  color: #1b1b1b;
+}
+
+a:hover {
+  color: #2eb8cf;
+}
+
+/* Container */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.header-logo {
+  padding-top: 20px;
+}
+
+/* Nav */
+
+.nav_link {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-left: 50px;
+  color: #1b1b1b;
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+
+.nav_link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+
+  background-color: #2eb8cf;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.nav_link:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+/* Nav Toggle */
+
+.nav-toggle {
+  display: none;
+  width: 30px;
+
+  padding: 15px 0;
+  font-size: 0;
+  color: transparent;
+
+  border: 0;
+  background-color: white;
+
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  z-index: 1;
+}
+
+.nav-toggle.active .nav-toggle-item {
+  background: none;
+}
+
+.nav-toggle.active .nav-toggle-item::before {
+  transform-origin: top left;
+  transform: rotate(45deg) translateX(-2px);
+}
+
+.nav-toggle.active .nav-toggle-item::after {
+  transform-origin: left bottom;
+  transform: rotate(-45deg) translateX(-3px);
+}
+
+.nav-toggle-item::before,
+.nav-toggle-item::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+
+  position: absolute;
+
+  background-color: #1b1b1b;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.2s linear;
+}
+
+.nav-toggle-item::before {
+  top: -7.5px;
+}
+
+.nav-toggle-item::after {
+  bottom: -9px;
+}
+
+.nav-toggle-item {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #1b1b1b;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* Intro */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+  background: url("../images/soglasovanie-pereplanirovki.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.intro-kvartira,
+.intro-nezhiloe,
+.intro-proekt,
+.intro-kgiop,
+.intro-gike,
+.intro-kadastr,
+.intro-about,
+.intro-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+}
+
+.intro-kvartira {
+  background: url("../images/pereplanirovka-kvartiri.jpg") center no-repeat;
+}
+
+.intro-nezhiloe {
+  background: url("../images/pereplanirovka-cafe.jpg") center no-repeat;
+}
+
+.intro-proekt {
+  background: url("../images/proekt-pereplanirovki.jpg") center no-repeat;
+}
+
+.intro-kgiop {
+  background: url("../images/soglasovanie-v-kgiop.jpg") center no-repeat;
+}
+
+.intro-gike {
+  background: url("../images/gike-kgiop.jpeg") center no-repeat;
+}
+
+.intro-kadastr {
+  background: url("../images/kadastrovie-raboti.jpg") center no-repeat;
+}
+
+.intro-about {
+  background: url("../images/about-us.jpg") center no-repeat;
+}
+
+.intro-contacts {
+  background: url("../images/contacts.jpeg") center no-repeat;
+}
+
+.intro-inner {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+
+  align-items: center;
+  line-height: 1.2;
+}
+
+.intro-subtitle {
+  color: white;
+  font-size: 19px;
+  padding: 30px 0;
+
+  font-weight: 100;
+
+  align-items: center;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Buttons */
+
+.button-1 {
+  display: inline-block;
+  vertical-align: top;
+
+  color: white;
+  background-color: #2eb8cf;
+  border-radius: 30px;
+
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+
+  text-align: center;
+  padding: 10px 50px;
+
+  transition: background 0.2s linear, color 0.2s linear;
+}
+
+.button-1:hover {
+  background-color: white;
+  color: #1b1b1b;
+}
+
+.button-2 {
+  display: inline-block;
+  vertical-align: top;
+
+  color: #2eb8cf;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: #2eb8cf 2px solid;
+
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+
+  text-align: center;
+  padding: 10px 50px;
+
+  transition: background 0.2s linear, color 0.2s linear;
+}
+
+.button-2:hover {
+  background-color: white;
+  color: #1b1b1b;
+}
+
+/* Call Button */
+
+.call-button {
+  width: 60px;
+  position: fixed;
+  right: 100px;
+  bottom: 120px;
+  z-index: 100;
+}
+
+.call-button:hover {
+  width: 70px;
+  transition: 1s;
+}
+
+/* Wa Button */
+
+.wa-button {
+  width: 65px;
+  position: fixed;
+  right: 100px;
+  bottom: 35px;
+  z-index: 100;
+}
+
+.wa-button:hover {
+  width: 75px;
+  transition: 1s;
+}
+
+/* About */
+
+.about-inner {
+  display: flex;
+}
+
+.column-1 {
+  width: 15%;
+  font-size: 16px;
+  font-weight: 700;
+  padding-top: 50px;
+  color: #1b1b1b;
+}
+
+.column-1 span {
+  padding-left: 30px;
+}
+
+.column-h2 {
+  font-size: 16px;
+  padding-left: 30px;
+}
+
+.column-2,
+.column-3 {
+  font-size: 16px;
+  color: #1b1b1b;
+}
+
+.column-2 {
+  width: 60%;
+  padding-top: 42px;
+}
+
+.column-3 {
+  width: 25%;
+  padding-top: 44px;
+}
+
+.column-text {
+  font-size: 14px;
+  margin-top: 17px;
+  color: #1b1b1b;
+  width: 90%;
+}
+
+/* Services */
+
+.services-inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.services-column-1 {
+  width: 30%;
+  padding-top: 50px;
+}
+
+.services-column-2 {
+  width: 30%;
+  padding-top: 50px;
+}
+
+.services-column-3 {
+  width: 25%;
+  padding-top: 50px;
+}
+
+.serv-column-text {
+  font-size: 14px;
+  margin-top: 20px;
+  padding-right: 20px;
+  color: #1b1b1b;
+  width: 80%;
+}
+
+.service-link {
+  color: #1b1b1b;
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+
+.service_link::after {
+  background-color: #2eb8cf;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.service_link:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+/* Clients */
+
+.clients-inner {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.column-clients {
+  width: 85%;
+  padding-top: 50px;
+}
+
+/* Benefits */
+
+.benefits-inner {
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.benefits-col-1 {
+  width: 30%;
+  padding-top: 50px;
+  color: #1b1b1b;
+}
+
+.benefits-col-2 {
+  width: 30%;
+  padding-top: 50px;
+  color: #1b1b1b;
+}
+
+.benefits-col-3 {
+  width: 25%;
+  padding-top: 50px;
+  color: #1b1b1b;
+}
+
+.big-num {
+  width: 150px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1b1b1b;
+  border-bottom: 2px solid #1b1b1b;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  position: absolute;
+  background-color: #2eb8cf;
+  height: auto;
+  padding: 50px 0;
+}
+
+.footer-inner {
+  display: flex;
+}
+
+.footer-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1b1b1b;
+  padding-left: 30px;
+  margin-bottom: 125px;
+}
+
+.footer-text {
+  padding-top: 20px;
+  padding-left: 30px;
+  font-size: 10px;
+  color: #1b1b1b;
+}
+
+.footer-column-1 {
+  width: 45%;
+}
+
+.footer-column-2 {
+  width: 45%;
+}
+
+.footer-column-3 {
+  width: 10%;
+}
+
+.footer-link:hover {
+  color: #1b1b1b;
+}
+
+/* Pereplan Kvartiri */
+
+.section-kv {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.section-kv p,
+ol {
+  text-align: justify;
+}
+
+/* How to section */
+
+.how-to-inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.ht-column h3 {
+  width: 80%;
+  font-size: 18px;
+  padding-left: 14px;
+  font-weight: 300;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.ht-column {
+  width: 25%;
+}
+
+.ht-all {
+  position: relative;
+  width: 100%;
+}
+
+.ht-text {
+  width: 85%;
+  font-size: 15px;
+}
+
+/* Benefits Section */
+
+.s-b-inner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.s-b-item {
+  font-size: 15px;
+  text-align: center;
+  padding: 0 30px;
+}
+
+/* Contacts */
+
+.section-contacts {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  height: 500px;
+}
+
+/* Slider */
+
+.slider {
+  padding-bottom: 40px;
+}
+
+.swiper {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.image-slider__slide {
+  margin-bottom: 40px;
+}
+
+.image-slider__image img {
+  height: 600px;
+}
+
+.image-slider .swiper-button-next {
+  color: #1b1b1b;
+}
+
+.image-slider .swiper-button-prev {
+  color: #1b1b1b;
+}
+
+.image-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #2eb8cf;
+}
+
+/* 404 */
+
+.section-404 {
+  margin-top: 300px;
+  height: 500px;
+}
+
+/* Макет для декстопа */
+@media only screen and (min-width: 961px) and (max-width: 1680px) {
+  .section-kv {
+    padding: 15px 15px;
+  }
+}
+
+/* Макет для планшетов */
+@media only screen and (min-width: 415px) and (max-width: 960px) {
+  .section-kv {
+    padding: 15px 15px;
+  }
+  .intro-title {
+    margin-top: 120px;
+  }
+}
+
+/* Макет для мобильных */
+
+@media only screen and (max-width: 414px) {
+  /* Header */
+
+  .header-inner {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Nav */
+
+  .nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    margin-left: 0;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav_link {
+    display: block;
+    margin: 0;
+    padding: 0px 30px 10px 30px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Intro Image */
+
+  .intro-title {
+    font-size: 25px;
+    margin: 30px;
+  }
+
+  .intro-subtitle {
+    font-size: 15px;
+    padding: 0 10px;
+    margin-top: 30px;
+  }
+
+  .button-1 {
+    margin-top: 60px;
+  }
+
+  /* About */
+
+  .about-inner {
+    flex-wrap: wrap;
+  }
+
+  .column-1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .column-1,
+  .column-2,
+  .column-3 {
+    width: 100%;
+  }
+
+  .column-2,
+  .column-3 {
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+
+  .column-3 {
+    padding-bottom: 30px;
+  }
+
+  /* Services */
+
+  .services-inner {
+    flex-wrap: wrap;
+  }
+
+  .services-column-1,
+  .services-column-2,
+  .services-column-3 {
+    text-align: center;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+
+  .serv-column-text {
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  /* Benefits Main Page */
+
+  .benefits-inner {
+    flex-wrap: wrap;
+  }
+
+  .benefits-col-1,
+  .benefits-col-2,
+  .benefits-col-3 {
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  .big-num {
+    width: 100%;
+    text-align: center;
+  }
+
+  .column-text {
+    width: 100%;
+  }
+
+  /* Clients */
+
+  .clients {
+    display: none;
+  }
+
+  /* Section Services */
+
+  .section-kv {
+    padding: 15px 15px;
+  }
+
+  .section-contacts {
+    padding: 15px 15px 15px 30px;
+  }
+
+  /* How to */
+
+  .section-how-to h2,
+  .service-benefits h2 {
+    padding-left: 15px;
+    padding-bottom: 20px;
+  }
+
+  .how-to-inner {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .ht-column {
+    padding-left: 15px;
+    width: 100%;
+  }
+  /* Section Benefits inside */
+
+  .s-b-inner {
+    flex-wrap: wrap;
+  }
+
+  /* Slider */
+
+  .slider {
+    padding-bottom: 10px;
+  }
+
+  .swiper {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .image-slider__slide {
+    margin-bottom: 20px;
+  }
+
+  .image-slider__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+
+  .footer-column-3 {
+    display: none;
+  }
+
+  .footer-column-1 {
+    width: 65%;
+  }
+
+  .footer-text {
+    font-size: 8px;
+  }
+
+  /* Call Button */
+
+  .call-button {
+    width: 53px;
+    position: fixed;
+    right: 15px;
+    bottom: 90px;
+    z-index: 100;
+  }
+
+  .call-button:hover {
+    width: 63px;
+    transition: 1s;
+  }
+
+  /* WA Button */
+
+  .wa-button {
+    width: 55px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .wa-button:hover {
+    width: 65px;
+  }
+}

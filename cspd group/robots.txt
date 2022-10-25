@@ -1,0 +1,17 @@
+Host: https://cspd.groupUser-agent: *Disallow: /assets/Disallow: /page404.html
+
+Disallow: /about
+Disallow: /services
+Disallow: /contacts
+Disallow: /work-with-us
+
+Disallow: /services/pereplanirovka-kvartiri-v-spb
+Disallow: /services/pereplanirovka-nezhilogo-pomescheniya
+Disallow: /services/razraborka-proekta-pereplanirovki
+Disallow: /services/soglasovanie-v-kgiop
+Disallow: /services/istoriko-kulturnaya-ekspertiza
+Disallow: /services/kadastrovie-raboti
+
+Allow: /
+
+Sitemap:https://cspd.group/sitemap.xml
