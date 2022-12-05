@@ -81,10 +81,6 @@ header {
   z-index: 1;
 }
 
-.items {
-  flex: 1;
-}
-
 .drawer {
   display: flex;
   flex-direction: column;
@@ -97,6 +93,7 @@ header {
   background: white;
 
   .items {
+    flex: 1;
     overflow: auto;
     margin-bottom: 40px;
   }
