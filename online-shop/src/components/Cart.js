@@ -1,15 +1,16 @@
-function Cart() {
+function Cart(props) {
   return (
-    <div style={{ display: "none" }} className="overlay">
+    <div className="overlay">
       <div className="drawer">
         <div className="d-flex justify-between mb-30">
           <h2>Orders</h2>
           <img
+            onClick={props.onCloseCart}
             className="removeBtn cu-p"
             width={15}
             height={15}
             src="/img/right-arrow.png"
-            alt="Remove"
+            alt="CLOSE"
           />
         </div>
         <div className="items">
