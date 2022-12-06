@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
+import Search from "./components/Search";
 
 const arr = [
   {
@@ -35,10 +36,7 @@ function App() {
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
           <h1>Nike Air Jordan Mid 1</h1>
-          <div className="search">
-            <img width={18} height={18} src="img/search.png" alt="" />
-            <input placeholder="Search..." />
-          </div>
+          <Search />
         </div>
         <div className="d-flex">
           {arr.map((obj) => (
