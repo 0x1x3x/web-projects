@@ -4,48 +4,46 @@ import Header from "./components/Header";
 import Cart from "./components/Cart";
 import Search from "./components/Search";
 
-const arr = [
-  {
-    title: "Women's Dunk High 'Burgundy Crush'",
-    price: 130,
-    imageUrl: "/img/nike-jordan-mid-1/1.webp",
-  },
-  {
-    title: "Dunk HI Retro University 'Safety Orange'",
-    price: 130,
-    imageUrl: "/img/nike-jordan-mid-1/2.webp",
-  },
-  {
-    title: "Dunk HI Retro University 'Chenille ...'",
-    price: 120,
-    imageUrl: "/img/nike-jordan-mid-1/3.webp",
-  },
-  {
-    title: "Women's Dunk High LXX 'Cinnabar'",
-    price: 130,
-    imageUrl: "/img/nike-jordan-mid-1/4.webp",
-  },
-];
-
 function App() {
+  const [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
+
+  React.useEffect(() => {
+    fetch("https://639078b365ff41831114a960.mockapi.io/items")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
+  }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems([...cartItems, obj]);
+  };
+
+  console.log(cartItems);
+
   return (
     <div className="wrapper clear">
-      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} />}
+      {cartOpened && (
+        <Cart items={cartItems} onCloseCart={() => setCartOpened(false)} />
+      )}
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
           <h1>Nike Air Jordan Mid 1</h1>
           <Search />
         </div>
-        <div className="d-flex">
-          {arr.map((obj) => (
+        <div className="d-flex flex-wrap">
+          {items.map((item) => (
             <Card
-              title={obj.title}
-              price={obj.price}
-              imageUrl={obj.imageUrl}
+              title={item.title}
+              price={item.price}
+              imageUrl={item.imageUrl}
               onFavorite={() => console.log("Add to Favorites")}
-              onPlus={() => console.log("Add to Cart")}
+              onPlus={(obj) => onAddToCart(obj)}
             />
           ))}
         </div>

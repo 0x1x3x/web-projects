@@ -1,15 +1,14 @@
 import styles from "./Cart.module.scss";
 
-function Cart(props) {
+function Cart({ onCloseCart, items = [] }) {
   return (
     <div className={styles.overlay}>
       <div className={styles.drawer}>
         <div className="d-flex justify-between mb-30">
           <h2>Orders</h2>
           <img
-            onClick={props.onCloseCart}
+            onClick={onCloseCart}
             className={styles.removeBtn}
-            // className="cu-p"
             width={15}
             height={15}
             src="/img/right-arrow.png"
@@ -17,46 +16,27 @@ function Cart(props) {
           />
         </div>
         <div className={styles.items}>
-          <div className={styles.cartItem}>
-            {/* style="d-flex align-center mb-20" */}
-            <div
-              style={{
-                backgroundImage: "url(/img/nike-jordan-mid-1/1.webp)",
-              }}
-              className={styles.cartItemImg}
-            ></div>
-            <div>
-              <p className="mb-5">Women's Dunk High "Burgundy Crush"</p>
-              <b>120 €</b>
+          {items.map((obj) => (
+            <div className={styles.cartItem}>
+              <div
+                style={{
+                  backgroundImage: `url(${obj.imageUrl})`,
+                }}
+                className={styles.cartItemImg}
+              ></div>
+              <div>
+                <p className="mb-5">{obj.title}</p>
+                <b>{obj.price} €</b>
+              </div>
+              <img
+                className={styles.removeBtn}
+                width={15}
+                height={15}
+                src="/img/btn-remove.svg"
+                alt="Remove"
+              />
             </div>
-            <img
-              className={styles.removeBtn}
-              width={15}
-              height={15}
-              src="/img/btn-remove.svg"
-              alt="Remove"
-            />
-          </div>
-          <div className={styles.cartItem}>
-            {/* style="d-flex align-center mb-20" */}
-            <div
-              style={{
-                backgroundImage: "url(/img/nike-jordan-mid-1/2.webp)",
-              }}
-              className={styles.cartItemImg}
-            ></div>
-            <div>
-              <p className="mb-5">Dunk HI Retro University "Safety Orange"</p>
-              <b>120 €</b>
-            </div>
-            <img
-              className={styles.removeBtn}
-              width={15}
-              height={15}
-              src="/img/btn-remove.svg"
-              alt="Remove"
-            />
-          </div>
+          ))}
         </div>
         <div className={styles.cartTotalBlock}>
           <ul>
