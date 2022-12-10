@@ -1,13 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
-import Search from "./components/Search";
 
 function App() {
-  const [items, setItems] = React.useState([]);
-  const [cartItems, setCartItems] = React.useState([]);
-  const [cartOpened, setCartOpened] = React.useState(false);
+  const [items, setItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [cartOpened, setCartOpened] = useState(false);
 
   React.useEffect(() => {
     fetch("https://639078b365ff41831114a960.mockapi.io/items")
@@ -20,10 +21,12 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    setCartItems([...cartItems, obj]);
+    setCartItems((prev) => [...prev, obj]);
   };
 
-  console.log(cartItems);
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
 
   return (
     <div className="wrapper clear">
@@ -33,12 +36,34 @@ function App() {
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
-          <h1>Nike Air Jordan Mid 1</h1>
-          <Search />
+          <h1>
+            {searchValue
+              ? `Search results for: "${searchValue}"`
+              : "Air Jordan 1 Mid"}
+          </h1>
+          <div className="search-block">
+            <img width={18} height={18} src="img/search.png" alt="" />
+            <input
+              onChange={onChangeSearchInput}
+              value={searchValue}
+              placeholder="Type to search..."
+            />
+            {searchValue && (
+              <img
+                className="clear cu-p"
+                onClick={() => setSearchValue("")}
+                width={15}
+                height={15}
+                src="/img/btn-remove.svg"
+                alt="Close Search"
+              />
+            )}
+          </div>
         </div>
-        <div className="d-flex flex-wrap justify-content">
+        <div className="d-flex flex-wrap justify-between">
           {items.map((item) => (
             <Card
+              key={item.title}
               title={item.title}
               price={item.price}
               imageUrl={item.imageUrl}
