@@ -61,9 +61,9 @@ function App() {
           </div>
         </div>
         <div className="d-flex flex-wrap justify-between">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <Card
-              key={item.title}
+              key={index}
               title={item.title}
               price={item.price}
               imageUrl={item.imageUrl}
