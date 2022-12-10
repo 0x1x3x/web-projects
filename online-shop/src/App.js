@@ -36,7 +36,7 @@ function App() {
           <h1>Nike Air Jordan Mid 1</h1>
           <Search />
         </div>
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap justify-content">
           {items.map((item) => (
             <Card
               title={item.title}
