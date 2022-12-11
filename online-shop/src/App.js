@@ -20,6 +20,39 @@ function App() {
       });
   }, []);
 
+  // const items = [
+  //   {
+  //     title: "Women's Dunk High 'Burgundy Crush'",
+  //     price: 130,
+  //     imageUrl: "/img/nike-jordan-mid-1/1.webp",
+  //   },
+  //   {
+  //     title: "Dunk HI Retro University 'Safety Orange'",
+  //     price: 130,
+  //     imageUrl: "/img/nike-jordan-mid-1/2.webp",
+  //   },
+  //   {
+  //     title: "Dunk HI Retro University 'Chenille ...'",
+  //     price: 120,
+  //     imageUrl: "/img/nike-jordan-mid-1/3.webp",
+  //   },
+  //   {
+  //     title: "Women's Dunk High LXX 'Cinnabar'",
+  //     price: 130,
+  //     imageUrl: "/img/nike-jordan-mid-1/4.webp",
+  //   },
+  //   {
+  //     title: "Women's Air Jordan 1 Mid 'Altitude Gr'",
+  //     price: 170,
+  //     imageUrl: "/img/nike-jordan-mid-1/5.webp",
+  //   },
+  //   {
+  //     title: "Air Jordan 1 Retro High OG 'Visionaire'",
+  //     price: 160,
+  //     imageUrl: "/img/nike-jordan-mid-1/6.webp",
+  //   },
+  // ];
+
   const onAddToCart = (obj) => {
     setCartItems((prev) => [...prev, obj]);
   };
@@ -61,16 +94,20 @@ function App() {
           </div>
         </div>
         <div className="d-flex flex-wrap justify-between">
-          {items.map((item, index) => (
-            <Card
-              key={index}
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              onFavorite={() => console.log("Add to Favorites")}
-              onPlus={(obj) => onAddToCart(obj)}
-            />
-          ))}
+          {items
+            .filter((item) =>
+              item.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
+            .map((item, index) => (
+              <Card
+                key={index}
+                title={item.title}
+                price={item.price}
+                imageUrl={item.imageUrl}
+                onFavorite={() => console.log("Add to Favorites")}
+                onPlus={(obj) => onAddToCart(obj)}
+              />
+            ))}
         </div>
       </div>
     </div>
