@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^cspd.group$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.cspd.group$
+  RewriteRule (.*)$ https://cspd.group/$1 [R=301,L]
+</IfModule>
