@@ -1,5 +1,6 @@
 User-agent: *
 Host: cspd.group
-Disallow: /assets/Disallow: /page404.html
+Disallow: /assets/
+Disallow: /404.html
 
 Sitemap:https://cspd.group/sitemap.xml
