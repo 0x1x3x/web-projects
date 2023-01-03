@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
@@ -11,12 +12,10 @@ function App() {
   const [cartOpened, setCartOpened] = useState(false);
 
   React.useEffect(() => {
-    fetch("https://639078b365ff41831114a960.mockapi.io/items")
+    axios
+      .get("https://639078b365ff41831114a960.mockapi.io/items")
       .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setItems(json);
+        setItems(res.data);
       });
   }, []);
 
@@ -54,6 +53,7 @@ function App() {
   // ];
 
   const onAddToCart = (obj) => {
+    axios.post("https://639078b365ff41831114a960.mockapi.io/cart", obj);
     setCartItems((prev) => [...prev, obj]);
   };
 
