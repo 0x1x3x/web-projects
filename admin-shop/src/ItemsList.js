@@ -8,7 +8,7 @@ export default function ItemsList(props) {
         <li key={item.id}>
           <Item info={item} />
           <button
-            className="btn-delete"
+            className="bg-[#fffff] text-black py-3.5 px-5 min-w-150 cursor-pointer mr-10 ml-10 shadow-black"
             onClick={() => props.onDeleteClick(item.id)}
           >
             Удалить

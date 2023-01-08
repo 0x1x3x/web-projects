@@ -22,19 +22,22 @@ export default function Item(props) {
   return (
     <div className="item">
       <div className="ml-10">
-        <h2 className="">{info.name}</h2>
+        <h2 className="text-3xl font-bold">{info.name}</h2>
         <p>{info.desc}</p>
       </div>
-      <div className="item-quantity">
+      <div className="flex items-center mb-50">
         <button
-          className="item-less"
+          className="bg-[#fffff] text-black py-3.5 px-5 min-w-150 cursor-pointer mr-10 ml-10"
           disabled={total === 0}
           onClick={handleRemoveClick}
         >
           -
         </button>
         <h3 className="item-total">{total ? total : ""}</h3>
-        <button className="item-more" onClick={handleAddClick}>
+        <button
+          className="bg-[#fffff] text-black py-3.5 px-5 min-w-150 cursor-pointer mr-10 ml-10"
+          onClick={handleAddClick}
+        >
           +
         </button>
       </div>

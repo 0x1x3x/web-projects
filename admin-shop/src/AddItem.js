@@ -11,7 +11,7 @@ export default function AddItem(props) {
           onChange={props.onNameChange}
           id="item-name"
           placeholder="Название товара"
-          className="py-3 px-2.5 rounded border-solid border-1 border-black"
+          className="py-3 px-2.5 rounded border-solid border-1 border-black text-base"
         />
       </div>
       <div className="py-1 px-2.5">
@@ -22,7 +22,7 @@ export default function AddItem(props) {
           onChange={props.onDescChange}
           id="item-description"
           placeholder="Описание товара"
-          className="py-3 px-2.5 rounded border-solid border-1 border-black"
+          className="py-3 px-2.5  text-base rounded border-solid border-1 border-black"
         />
       </div>
       <div className="py-3 px-2.5">
