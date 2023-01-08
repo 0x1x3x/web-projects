@@ -60,7 +60,6 @@ export default function Shop() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline px-2.5">Admin panel</h1>
       <AddItem
         name={name}
         desc={desc}
@@ -69,7 +68,7 @@ export default function Shop() {
         onDescChange={handleDescChange}
         onFormSubmit={handleFormSubmit}
       />
-      <div className="py-3 px-2.5">
+      <div className="px-2.5">
         {items.length === 0 && <p>Добавьте первый товар</p>}
       </div>
       <ItemsList items={items} onDeleteClick={handleDeleteClick} />
