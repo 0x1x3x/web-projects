@@ -4,12 +4,28 @@ import ItemsList from "./ItemsList";
 import AddItem from "./AddItem";
 
 export default function Shop() {
-  const [items, setItems] = useState(() =>
-    JSON.parse(localStorage.getItem("items"))
-  );
+  const [items, setItems] = useState([]);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [valid, setValid] = useState("");
+
+  const saveGoods = async (item) => {
+    const { id, ...others } = item;
+    try {
+      const res = await fetch(
+        "https://learn.guidedao.xyz/api/student/products",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({ ...others }),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
@@ -34,17 +50,17 @@ export default function Shop() {
       setValid("Введите описание ");
       return;
     }
-    setItems([
-      ...items,
-      {
-        id: uuid(),
-        name: name,
-        desc: desc,
-      },
-    ]);
+
+    const item = {
+      id: uuid(),
+      name: name,
+      desc: desc,
+    };
+    setItems([...items, item]);
     setName("");
     setDesc("");
     setValid("");
+    saveGoods(item);
   }
 
   function handleNameChange(event) {

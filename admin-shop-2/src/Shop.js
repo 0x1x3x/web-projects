@@ -22,6 +22,8 @@ export default function Shop() {
     fetchItems();
   }, []);
 
+  console.log(items[0]);
+
   return (
     <div className="w-1/2 ml-10 mt-10">
       {loader ? (
