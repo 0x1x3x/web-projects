@@ -11,7 +11,7 @@ function App() {
       <>
         <Shop />
         <button
-          className="ml-10 mt-5 cursor-pointer bg-[#0000ff] text-white py-3.5 px-5 min-w-150 border border-[#0000ff] rounded shadow disabled:opacity-25active:translate-y-0.5 hover:bg-blue-700"
+          className="ml-10 mt-5 mb-5 cursor-pointer bg-[#0000ff] text-white py-3.5 px-5 min-w-150 border border-[#0000ff] rounded shadow disabled:opacity-25active:translate-y-0.5 hover:bg-blue-700"
           onClick={() => setLogin(false)}
         >
           Выйти
