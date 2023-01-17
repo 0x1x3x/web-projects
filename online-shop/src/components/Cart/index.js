@@ -1,6 +1,6 @@
 import styles from "./Cart.module.scss";
 
-function Cart({ onCloseCart, items = [] }) {
+function Cart({ onCloseCart, onRemove, items = [] }) {
   return (
     <div className={styles.overlay}>
       <div className={styles.drawer}>
@@ -29,6 +29,9 @@ function Cart({ onCloseCart, items = [] }) {
                 <b>{obj.price} €</b>
               </div>
               <img
+                onClick={() => {
+                  onRemove(obj.id);
+                }}
                 className={styles.removeBtn}
                 width={15}
                 height={15}

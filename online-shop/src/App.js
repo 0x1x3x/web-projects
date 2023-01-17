@@ -1,8 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "./components/Card";
+// import uuid from "react-uuid"; Подключить
+
 import Header from "./components/Header";
+import Card from "./components/Card";
 import Cart from "./components/Cart";
 
 function App() {
@@ -11,50 +12,27 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [cartOpened, setCartOpened] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios
       .get("https://639078b365ff41831114a960.mockapi.io/items")
       .then((res) => {
         setItems(res.data);
       });
+    axios
+      .get("https://639078b365ff41831114a960.mockapi.io/cart")
+      .then((res) => {
+        setCartItems(res.data);
+      });
   }, []);
-
-  // const items = [
-  //   {
-  //     title: "Women's Dunk High 'Burgundy Crush'",
-  //     price: 130,
-  //     imageUrl: "/img/nike-jordan-mid-1/1.webp",
-  //   },
-  //   {
-  //     title: "Dunk HI Retro University 'Safety Orange'",
-  //     price: 130,
-  //     imageUrl: "/img/nike-jordan-mid-1/2.webp",
-  //   },
-  //   {
-  //     title: "Dunk HI Retro University 'Chenille ...'",
-  //     price: 120,
-  //     imageUrl: "/img/nike-jordan-mid-1/3.webp",
-  //   },
-  //   {
-  //     title: "Women's Dunk High LXX 'Cinnabar'",
-  //     price: 130,
-  //     imageUrl: "/img/nike-jordan-mid-1/4.webp",
-  //   },
-  //   {
-  //     title: "Women's Air Jordan 1 Mid 'Altitude Gr'",
-  //     price: 170,
-  //     imageUrl: "/img/nike-jordan-mid-1/5.webp",
-  //   },
-  //   {
-  //     title: "Air Jordan 1 Retro High OG 'Visionaire'",
-  //     price: 160,
-  //     imageUrl: "/img/nike-jordan-mid-1/6.webp",
-  //   },
-  // ];
 
   const onAddToCart = (obj) => {
     axios.post("https://639078b365ff41831114a960.mockapi.io/cart", obj);
     setCartItems((prev) => [...prev, obj]);
+  };
+
+  const onRemoveItem = (id) => {
+    axios.delete(`https://639078b365ff41831114a960.mockapi.io/cart/${id}`);
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
   const onChangeSearchInput = (event) => {
@@ -64,7 +42,11 @@ function App() {
   return (
     <div className="wrapper clear">
       {cartOpened && (
-        <Cart items={cartItems} onCloseCart={() => setCartOpened(false)} />
+        <Cart
+          items={cartItems}
+          onCloseCart={() => setCartOpened(false)}
+          onRemove={onRemoveItem}
+        />
       )}
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content p-40">
