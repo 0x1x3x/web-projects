@@ -2,10 +2,10 @@ function Header(props) {
   return (
     <header className="d-flex justify-between align-center p-40">
       <div className="d-flex align-center">
-        <img width={40} height={40} src="/img/logo.svg" alt="Logo" />
+        <img width={70} height={70} src="favicon.svg" alt="Logo" />
         <div>
           <h3 className="text-uppercase">newcop</h3>
-          <p>Barcelona</p>
+          <p>Limited Sneakers</p>
         </div>
       </div>
       <nav className="d-flex">
