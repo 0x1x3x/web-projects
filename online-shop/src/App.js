@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import axios from "axios";
-// import uuid from "react-uuid"; Подключить
 
 import Header from "./components/Header";
-import Card from "./components/Card";
+import Home from "./pages/Home";
 import Cart from "./components/Cart";
+import Favorites from "./pages/Favorites";
 
-function App() {
+export default function App() {
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -24,6 +26,11 @@ function App() {
       .then((res) => {
         setCartItems(res.data);
       });
+    axios
+      .get("https://639078b365ff41831114a960.mockapi.io/favorited")
+      .then((res) => {
+        setFavorites(res.data);
+      });
   }, []);
 
   const onAddToCart = (obj) => {
@@ -31,14 +38,23 @@ function App() {
     setCartItems((prev) => [...prev, obj]);
   };
 
-  const onAddFavorite = (obj) => {
-    axios.post("https://639078b365ff41831114a960.mockapi.io/favorites", obj);
-    setFavorites((prev) => [...prev, obj]);
-  };
-
   const onRemoveItem = (id) => {
     axios.delete(`https://639078b365ff41831114a960.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const onAddFavorite = async (obj) => {
+    if (favorites.find((favObj) => favObj.id === obj.id)) {
+      axios.delete(
+        `https://639078b365ff41831114a960.mockapi.io/favorited/${obj.id}`
+      );
+    } else {
+      const { data } = await axios.post(
+        "https://639078b365ff41831114a960.mockapi.io/favorited",
+        obj
+      );
+      setFavorites((prev) => [...prev, data]);
+    }
   };
 
   const onChangeSearchInput = (event) => {
@@ -54,52 +70,31 @@ function App() {
           onRemove={onRemoveItem}
         />
       )}
+
       <Header onClickCart={() => setCartOpened(true)} />
-      <div className="content p-40">
-        <div className="d-flex align-center justify-between mb-40">
-          <h1>
-            {searchValue
-              ? `Search results for: "${searchValue}"`
-              : "Air Jordan 1 Mid"}
-          </h1>
-          <div className="search-block">
-            <img width={18} height={18} src="img/search.png" alt="" />
-            <input
-              onChange={onChangeSearchInput}
-              value={searchValue}
-              placeholder="Type to search..."
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <Home
+              items={items}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
+              onAddFavorite={onAddFavorite}
+              onAddToCart={onAddToCart}
             />
-            {searchValue && (
-              <img
-                className="clear cu-p"
-                onClick={() => setSearchValue("")}
-                width={15}
-                height={15}
-                src="/img/btn-remove.svg"
-                alt="Close Search"
-              />
-            )}
-          </div>
-        </div>
-        <div className="d-flex flex-wrap justify-between">
-          {items
-            .filter((item) =>
-              item.title.toLowerCase().includes(searchValue.toLowerCase())
-            )
-            .map((item, index) => (
-              <Card
-                key={index}
-                title={item.title}
-                price={item.price}
-                imageUrl={item.imageUrl}
-                onFavorite={(obj) => onAddFavorite(obj)}
-                onPlus={(obj) => onAddToCart(obj)}
-              />
-            ))}
-        </div>
-      </div>
+          }
+        />
+        <Route
+          exact
+          path="/favorites"
+          element={
+            <Favorites items={favorites} onAddFavorite={onAddFavorite} />
+          }
+        />
+      </Routes>
     </div>
   );
 }
-
-export default App;
