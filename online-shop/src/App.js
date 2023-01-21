@@ -14,28 +14,41 @@ export default function App() {
   const [favorites, setFavorites] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [cartOpened, setCartOpened] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://639078b365ff41831114a960.mockapi.io/items")
-      .then((res) => {
-        setItems(res.data);
-      });
-    axios
-      .get("https://639078b365ff41831114a960.mockapi.io/cart")
-      .then((res) => {
-        setCartItems(res.data);
-      });
-    axios
-      .get("https://639078b365ff41831114a960.mockapi.io/favorited")
-      .then((res) => {
-        setFavorites(res.data);
-      });
+    async function fetchData() {
+      setIsLoading(true);
+      const cartResponse = await axios.get(
+        "https://639078b365ff41831114a960.mockapi.io/cart"
+      );
+
+      const favResponse = await axios.get(
+        "https://639078b365ff41831114a960.mockapi.io/favorited"
+      );
+      const itemsResponse = await axios.get(
+        "https://639078b365ff41831114a960.mockapi.io/items"
+      );
+      setIsLoading(false);
+      setCartItems(cartResponse.data);
+      setFavorites(favResponse.data);
+      setItems(itemsResponse.data);
+    }
+    fetchData();
   }, []);
 
   const onAddToCart = (obj) => {
-    axios.post("https://639078b365ff41831114a960.mockapi.io/cart", obj);
-    setCartItems((prev) => [...prev, obj]);
+    if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
+      axios.delete(
+        `https://639078b365ff41831114a960.mockapi.io/cart/${obj.id}`
+      );
+      setCartItems((prev) =>
+        prev.filter((item) => Number(item.id) !== Number(obj.id))
+      );
+    } else {
+      axios.post("https://639078b365ff41831114a960.mockapi.io/cart", obj);
+      setCartItems((prev) => [...prev, obj]);
+    }
   };
 
   const onRemoveItem = (id) => {
@@ -79,11 +92,13 @@ export default function App() {
           element={
             <Home
               items={items}
+              cartItems={cartItems}
               searchValue={searchValue}
               setSearchValue={setSearchValue}
               onChangeSearchInput={onChangeSearchInput}
               onAddFavorite={onAddFavorite}
               onAddToCart={onAddToCart}
+              isLoading={isLoading}
             />
           }
         />
