@@ -46,13 +46,15 @@ function Card({
       ) : (
         <>
           <div className={styles.favorite} onClick={onFavorite}>
-            <img
-              onClick={onClickLike}
-              width={30}
-              height={30}
-              src={isLiked ? "img/liked.svg" : "/img/unliked.svg"}
-              alt="Unliked"
-            />
+            {onFavorite && (
+              <img
+                onClick={onClickLike}
+                width={30}
+                height={30}
+                src={isLiked ? "img/liked.svg" : "/img/unliked.svg"}
+                alt="Unliked"
+              />
+            )}
           </div>
           <img width={330} src={imageUrl} alt="" />
           <p>Nike</p>
@@ -62,14 +64,16 @@ function Card({
               <b>{price}.00€</b>
             </div>
 
-            <img
-              className={styles.plus}
-              onClick={onClickPlus}
-              width={30}
-              height={30}
-              src={isItemAdded(id) ? "/img/checked.svg" : "/img/added.svg"}
-              alt="Add to cart button"
-            />
+            {onPlus && (
+              <img
+                className={styles.plus}
+                onClick={onClickPlus}
+                width={30}
+                height={30}
+                src={isItemAdded(id) ? "/img/checked.svg" : "/img/added.svg"}
+                alt="Add to cart button"
+              />
+            )}
           </div>
         </>
       )}

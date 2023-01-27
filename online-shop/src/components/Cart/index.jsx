@@ -1,24 +1,47 @@
 import React from "react";
-import Info from "../Info";
-import styles from "./Cart.module.scss";
-import AppContext from "../../context";
 import axios from "axios";
 
-function Cart({ onCloseCart, onRemove, items = [] }) {
-  const { cartItems, setCartItems } = React.useContext(AppContext);
-  const [isOrderComplete, setOrderComplete] = React.useState(false);
+import Info from "../Info";
+import useCart from "../../hooks/useCart";
 
-  const onClickOrder = () => {
-    axios.post("https://639078b365ff41831114a960.mockapi.io/order", {
-      items: cartItems,
-    });
+import styles from "./Cart.module.scss";
 
-    setOrderComplete(true);
-    setCartItems([]);
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function Cart({ onCloseCart, onRemove, items = [], opened }) {
+  const { cartItems, setCartItems, totalPrice } = useCart();
+  const [orderId, setOrderId] = React.useState(null);
+  const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const onClickOrder = async () => {
+    try {
+      setIsLoading(true);
+      const { data } = await axios.post(
+        "https://639078b365ff41831114a960.mockapi.io/orders",
+        {
+          items: cartItems,
+        }
+      );
+      setOrderId(data.id);
+      setIsOrderComplete(true);
+      setCartItems([]);
+
+      for (let i = 0; i < cartItems.length; i++) {
+        const item = cartItems[i];
+        await axios.delete(
+          "https://639078b365ff41831114a960.mockapi.io/cart" + item.id
+        );
+        await delay(1000);
+      }
+    } catch (error) {
+      console.log("Something go wrong");
+    }
+    setIsLoading(false);
   };
 
   return (
-    <div className={styles.overlay}>
+    <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ""}`}>
       <div className={styles.drawer}>
         {items.length > 0 ? (
           <div className="d-flex flex-column flex">
@@ -64,22 +87,26 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                 <li className="d-flex">
                   <span>Subtotal:</span>
                   <div></div>
-                  <b>120 €</b>
+                  <b>{totalPrice} €</b>
                 </li>
                 <li className="d-flex">
                   <span>Total:</span>
                   <div></div>
-                  <b>120 €</b>
+                  <b>{totalPrice} €</b>
                 </li>
               </ul>
-              <button onClick={onClickOrder}>CHECKOUT</button>
+              <button disabled={isLoading} onClick={onClickOrder}>
+                CHECKOUT
+              </button>
             </div>
           </div>
         ) : (
           <Info
             title={isOrderComplete ? "Order complete" : "Cart is empty"}
             description={
-              isOrderComplete ? "Sneakers are on a way" : "Add something"
+              isOrderComplete
+                ? `Your order # ${orderId} is on the way`
+                : "Add something"
             }
             image={
               isOrderComplete ? "/img/order-complete.svg" : "/img/empty-box.svg"

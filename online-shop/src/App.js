@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Cart from "./components/Cart";
 import Favorites from "./pages/Favorites";
+import Orders from "./pages/Orders";
 
 import AppContext from "./context";
 
@@ -91,18 +92,18 @@ function App() {
         favorites,
         isItemAdded,
         onAddFavorite,
+        onAddToCart,
         setCartOpened,
         setCartItems,
       }}
     >
       <div className="wrapper clear">
-        {cartOpened && (
-          <Cart
-            items={cartItems}
-            onCloseCart={() => setCartOpened(false)}
-            onRemove={onRemoveItem}
-          />
-        )}
+        <Cart
+          items={cartItems}
+          onCloseCart={() => setCartOpened(false)}
+          onRemove={onRemoveItem}
+          opened={cartOpened}
+        />
 
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
@@ -123,6 +124,7 @@ function App() {
             }
           />
           <Route exact path="/favorites" element={<Favorites />} />
+          <Route exact path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>
