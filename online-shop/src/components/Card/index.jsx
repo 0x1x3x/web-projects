@@ -14,15 +14,15 @@ function Card({
   loading = false,
 }) {
   const { isItemAdded } = React.useContext(AppContext);
-
   const [isLiked, setIsLiked] = React.useState(favorited);
+  const obj = { id, parentId: id, title, imageUrl, price };
 
   const onClickPlus = () => {
-    onPlus({ id, title, imageUrl, price });
+    onPlus(obj);
   };
 
   const onClickLike = () => {
-    onFavorite({ id, title, imageUrl, price });
+    onFavorite(obj);
     setIsLiked(!isLiked);
   };
 
