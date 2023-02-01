@@ -11,6 +11,8 @@ import Orders from "./pages/Orders";
 
 import AppContext from "./context";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);

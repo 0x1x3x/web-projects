@@ -19,7 +19,14 @@ body {
 // Header
 
 header {
-  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  position: absolute;
+  background-color: transparent;
+  height: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 
   img {
     margin-right: 15px;
@@ -29,6 +36,10 @@ header {
   p {
     margin: 0;
   }
+}
+
+header:hover {
+  background-color: white;
 }
 
 nav {
