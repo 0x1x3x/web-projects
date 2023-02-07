@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  /* cursor: url("/./public/img/cursor-hand.cur"), default; */
+}
+
+body {
+  margin: 0;
+  font-family: "Inconsolata", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Nav */
+
+.nav-btn {
+  padding: 10px 5px;
+  cursor: pointer;
+  /* cursor: url("./img/hands-cursor.png"), pointer; */
+  display: none;
+  font-size: 1.5rem;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0d0d0d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-btn {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fff;
+    transition: 1s;
+    transform: translateX(-100vh);
+  }
+
+  .responsive_nav {
+    transform: none;
+  }
+
+  .nav-close-btn {
+    position: absolute;
+    top: 42px;
+    right: 40px;
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 1.8rem;
+  }
+}
+
+/* Nav */

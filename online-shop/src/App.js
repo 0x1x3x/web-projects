@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Cart from "./components/Cart";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
+import Footer from "./components/Footer";
 
 import AppContext from "./context";
 
@@ -132,7 +133,6 @@ function App() {
           onRemove={onRemoveItem}
           opened={cartOpened}
         />
-
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
           <Route
@@ -154,6 +154,7 @@ function App() {
           <Route exact path="/favorites" element={<Favorites />} />
           <Route exact path="/orders" element={<Orders />} />
         </Routes>
+        <Footer />
       </div>
     </AppContext.Provider>
   );
