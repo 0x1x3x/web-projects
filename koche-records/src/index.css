@@ -7,16 +7,16 @@
   /* cursor: url("/./public/img/cursor-hand.cur"), default; */
 }
 
+h2 {
+  font-size: 20px;
+}
+
 body {
   margin: 0;
+  height: 100vh;
   font-family: "Inconsolata", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* Nav */
@@ -71,6 +71,7 @@ body {
     background-color: #fff;
     transition: 1s;
     transform: translateX(-100vh);
+    z-index: 100;
   }
 
   .responsive_nav {

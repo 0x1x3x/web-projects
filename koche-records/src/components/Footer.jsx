@@ -3,7 +3,7 @@ const Footer = () => {
     position: "relative",
     width: "100%",
     height: "300px",
-    marginTop: "-200px",
+    marginTop: "-300px",
     backgroundImage: "url('img/hands.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -11,10 +11,10 @@ const Footer = () => {
 
   return (
     <>
-      <footer class="z-0 relative">
-        <div style={hands} class="hidden md:block"></div>
+      <footer class="z-40">
+        <div style={hands} class="hidden md:block z-0"></div>
         <hr />
-        <div class="flex justify-between content-center px-10 py-2 flex-col items-center text-center md:flex-row md:text-left gap-5">
+        <div class="flex justify-between content-center px-10 py-4 flex-col items-center text-center md:flex-row md:text-left gap-5">
           <div class="hidden md:block">
             <p>Barcelona</p>
             <p>Spain</p>
@@ -46,7 +46,7 @@ const Footer = () => {
               href="https://behindthemeta.xyz"
               class="hover-underline-animation"
             >
-              <p>Behind the meta</p>
+              <p>Behind the Meta</p>
             </a>
           </div>
           <div>
