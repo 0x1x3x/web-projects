@@ -11,8 +11,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer class="z-40">
-        <div style={hands} class="hidden md:block z-0"></div>
+      <footer class="z-40 bottom-0">
+        {/* <div style={hands} class="hidden md:block z-0"></div> */}
         <hr />
         <div class="flex justify-between content-center px-10 py-4 flex-col items-center text-center md:flex-row md:text-left gap-5">
           <div class="hidden md:block">

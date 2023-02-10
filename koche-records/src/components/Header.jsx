@@ -30,22 +30,22 @@ const Header = () => {
           >
             podcasts
           </Link>
-          <a
-            href="/events"
+          <Link
+            to="/events"
             title="events"
             class="hover-underline-animation md:ml-5"
           >
             events
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             title="about"
             class="hover-underline-animation md:ml-5"
           >
             about
-          </a>
+          </Link>
           <a
-            href="/contact"
+            href="mailto:kocherecords@gmail.com"
             title="contact"
             class="hover-underline-animation md:ml-5"
           >

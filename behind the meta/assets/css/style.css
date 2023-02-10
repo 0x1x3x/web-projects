@@ -100,14 +100,14 @@ h2 {
 
 .anima-text::after {
   width: 0.125em;
-  background: white;
+  background: rgb(0, 0, 0);
   animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 3s forwards,
     blink 750ms steps(35) infinite;
 }
 
 .anima-text::before {
-  background-color: #181818;
+  background-color: #ffffff;
   animation: typewriter var(--typewriterSpeed)
     steps(var(--typewriterCharacters)) 3s forwards;
 }
