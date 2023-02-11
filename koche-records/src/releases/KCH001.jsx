@@ -1,6 +1,6 @@
 const KCH001 = () => {
   return (
-    <section class="md:h-[800px]">
+    <section>
       <div class="flex justify-between items-center flex-wrap md:flex-nowrap mx-10 md:pt-[70px]">
         <div class="mb-4 md:mb-0">
           <img src="/img/albums/eugene-schieffer.jpg" alt="" />
@@ -8,10 +8,10 @@ const KCH001 = () => {
 
         <div class="md:pl-[209px]">
           <h2 class="font-medium">Eugene Schieffer</h2>
-          <p>Funny Grass and Sad Kids</p>
+          <p>Funny Grass and Sad Kids [KCH001]</p>
           <p class="text-justify py-5 md:pr-[150px]">
             Carefully mixed together three beautiful tracks is now complete with
-            Eugene Schieffer debut EP for first release on köche records. Eugene
+            Eugene Schieffer debut EP for first release on Köche Records. Eugene
             Schieffer discover a full detailed, panoramic, deep and eclectic
             sound from scratch. Warm berlin-style patterns, crispy percussions
             and also little sounds take us to the basics of micro house.

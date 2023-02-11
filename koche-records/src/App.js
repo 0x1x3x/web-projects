@@ -9,6 +9,7 @@ import Events from "./pages/Events.jsx";
 import About from "./pages/About.jsx";
 
 import KCH001 from "./releases/KCH001.jsx";
+import KCH002 from "./releases/KCH002.jsx";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Releases />} />
         <Route exact path="/podcasts" element={<Podcasts />} />
+
         <Route exact path="/kch001" element={<KCH001 />} />
+        <Route exact path="/kch002" element={<KCH002 />} />
+
         <Route exact path="/events" element={<Events />} />
         <Route exact path="/about" element={<About />} />
       </Routes>
