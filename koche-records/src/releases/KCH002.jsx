@@ -1,29 +1,34 @@
+import ReactImageMagnify from "react-image-magnify";
+
 const KCH002 = () => {
-  const imgContEl = document.querySelector(".img-container");
-  const imgEl = document.querySelector(".img-container img");
-  const ZOOM = 300;
-
-  imgContEl.addEventListener("mouseenter", function () {
-    imgEl.style.width = ZOOM + "%";
-  });
-
-  imgContEl.addEventListener("mouseleave", function () {
-    imgEl.style.width = "100%";
-  });
-
+  const coverImage = "/img/albums/canteloop.jpg";
   return (
     <section>
-      <div class="flex justify-between items-center flex-wrap md:flex-nowrap mx-10 md:pt-[70px]">
-        <div class="container">
-          <div class="mb-4 md:mb-0 img-container">
-            <img src="/img/albums/canteloop.jpg" alt="" />
-          </div>
+      <div class="flex justify-between items-center flex-wrap mx-10 lg:pt-[70px] lg:flex-nowrap ">
+        <div class="md:mb-0 hidden lg:block">
+          <ReactImageMagnify
+            {...{
+              smallImage: {
+                alt: "Fake Boundaries",
+                isFluidWidth: true,
+                src: coverImage,
+              },
+              largeImage: {
+                src: coverImage,
+                width: 1200,
+                height: 1200,
+              },
+            }}
+          />
+        </div>
+        <div class="mb-4 lg:hidden">
+          <img src={coverImage} alt="Fake Boundaries" class="image" />
         </div>
 
-        <div class="md:pl-[209px]">
+        <div class="lg:pl-[209px]">
           <h2 class="font-medium">Canteloop</h2>
           <p>Fake Boundaries [KCH002]</p>
-          <p class="text-justify py-5 md:pr-[150px]">
+          <p class="text-justify py-5 lg:mr-[150px]">
             In the second release on Koche records we will present a
             great-detailed and deep sounds from Cantheloop - Fake Boundaries EP.
             Cantheloop is Miroslav Tanev, Berlin based sound producer and dj. In
@@ -43,7 +48,7 @@ const KCH002 = () => {
               </a>
             </iframe>
           </div>
-          <div class="md:pt-[70px] my-4 md:my-0">
+          <div class="lg:my-0 lg:pt-[70px]">
             <div>
               Listen on{" "}
               <a
@@ -68,9 +73,5 @@ const KCH002 = () => {
     </section>
   );
 };
-
-// image zoom
-
-// image zoom
 
 export default KCH002;

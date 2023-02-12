@@ -43,7 +43,7 @@ const Releases = () => {
   ];
   return (
     <section>
-      <div class="flex justify-between items-center mx-10 mb-8 flex-wrap gap-x-52 gap-y-7">
+      <div class="flex justify-between items-center mx-10 mb-8 flex-wrap gap-y-7 lg:gap-x-52 ">
         {albums.map((album) => (
           <AlbumItem key={album.name} {...album} />
         ))}

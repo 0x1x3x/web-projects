@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+img,
+video {
+  max-width: 1200px;
+  height: auto;
+  position: relative;
+  z-index: 100;
+}
+
 * {
   box-sizing: border-box;
   /* cursor: url("/./public/img/cursor-hand.cur"), default; */
@@ -28,15 +36,11 @@ section {
   min-height: 800px;
 }
 
-/* Nav */
-
-.nav-btn {
-  padding: 10px 5px;
-  cursor: pointer;
-  /* cursor: url("./img/hands-cursor.png"), pointer; */
-  display: none;
-  font-size: 1.5rem;
+.image {
+  width: 100%;
 }
+
+/* Underline-Effect */
 
 .hover-underline-animation {
   display: inline-block;
@@ -61,7 +65,17 @@ section {
   transform-origin: bottom left;
 }
 
-@media only screen and (max-width: 800px) {
+/* Nav */
+
+.nav-btn {
+  padding: 10px 5px;
+  cursor: pointer;
+  /* cursor: url("./img/hands-cursor.png"), pointer; */
+  display: none;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 912px) {
   .nav-btn {
     display: block;
   }
@@ -80,7 +94,7 @@ section {
     background-color: #fff;
     transition: 1s;
     transform: translateX(-100vh);
-    z-index: 100;
+    z-index: 500;
   }
 
   .responsive_nav {
@@ -97,23 +111,4 @@ section {
   nav a {
     font-size: 1.8rem;
   }
-}
-
-/* Nav */
-
-.img-container {
-  max-width: 600px;
-  height: 600px;
-  overflow: hidden;
-  position: relative;
-  box-sizing: inherit;
-}
-
-.img-container img {
-  width: 100%;
-  display: block;
-}
-
-.img-container:hover {
-  cursor: zoom-in;
 }

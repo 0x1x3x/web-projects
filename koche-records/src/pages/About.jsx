@@ -1,8 +1,11 @@
 const About = () => {
   return (
     <section>
-      <div class="flex justify-between items-center flex-wrap md:flex-nowrap pt-10 mx-10">
-        <div class="mr-10 z-10 w-[600px] mb-4">
+      <div class="flex justify-between items-center flex-wrap mx-10 pb-8 lg:flex-nowrap lg:pt-10">
+        <div class="mb-4 md:block lg:hidden">
+          <img src="/img/about.jpg" alt="" class="image" />
+        </div>
+        <div class=" z-10 text-justify mb-4 lg:w-[600px] lg:mr-10">
           <h1 class="pb-4">ABOUT</h1>
           <p class="pb-4">
             Koche Records was launched by{" "}
@@ -51,8 +54,8 @@ const About = () => {
           </p>
           <p> The journey is just beginning.</p>
         </div>
-        <div class="md:m-auto mb-4">
-          <img src="/img/about.jpg" alt="" />
+        <div class="mb-4 md:hidden sm: hidden lg:block">
+          <img src="/img/about.jpg" alt="" class="image" />
         </div>
       </div>
     </section>

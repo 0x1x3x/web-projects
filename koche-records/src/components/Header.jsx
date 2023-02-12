@@ -19,35 +19,35 @@ const Header = () => {
         <Link to="/">
           <img src="./logo.webp" width={100} alt="" />
         </Link>
-        <nav class="flex items-center md:pl-20" ref={navRef}>
+        <nav class="flex items-center lg:pl-20" ref={navRef}>
           <Link to="/" title="releases" class="hover-underline-animation ">
             releases
           </Link>
           <Link
             to="/podcasts"
             title="podcasts"
-            class="hover-underline-animation md:ml-5"
+            class="hover-underline-animation lg:ml-5"
           >
             podcasts
           </Link>
           <Link
             to="/events"
             title="events"
-            class="hover-underline-animation md:ml-5"
+            class="hover-underline-animation lg:ml-5"
           >
             events
           </Link>
           <Link
             to="/about"
             title="about"
-            class="hover-underline-animation md:ml-5"
+            class="hover-underline-animation lg:ml-5"
           >
             about
           </Link>
           <a
             href="mailto:kocherecords@gmail.com"
             title="contact"
-            class="hover-underline-animation md:ml-5"
+            class="hover-underline-animation lg:ml-5"
           >
             contact
           </a>
@@ -57,7 +57,7 @@ const Header = () => {
           </button>
         </nav>
 
-        <div class="max-[800px]:hidden flex content-center flex-wrap flex-row">
+        <div class="max-[912px]:hidden flex content-center flex-wrap flex-row">
           <a href="https://www.facebook.com/kocherecords">
             <i class="fa fa-facebook social-icon pl-5"></i>
           </a>
