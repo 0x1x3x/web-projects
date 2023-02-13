@@ -25,7 +25,7 @@ const KCH002 = () => {
           <img src={coverImage} alt="Fake Boundaries" class="image" />
         </div>
 
-        <div class="lg:pl-[209px]">
+        <div class="lg:pl-[209px] md:pb-4 z-50">
           <h2 class="font-medium">Canteloop</h2>
           <p>Fake Boundaries [KCH002]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
@@ -48,7 +48,7 @@ const KCH002 = () => {
               </a>
             </iframe>
           </div>
-          <div class="lg:my-0 lg:pt-[70px]">
+          <div class="py-4 lg:pt-[70px]">
             <div>
               Listen on{" "}
               <a

@@ -37,8 +37,6 @@ const Releases = () => {
       desc: "Funny Grass And Sad Kids [KCH001]",
       image: "/img/albums/eugene-schieffer.jpg",
       href: "/kch001",
-      fulldesc:
-        "Carefully mixed together three beautiful tracks is now complete with Eugene Schieffer debut EP for first release on köche records. Eugene Schieffer discover a full detailed, panoramic, deep and eclectic sound from scratch. Warm berlin-style patterns, crispy percussions and also little sounds take us to the basics of micro house.",
     },
   ];
   return (

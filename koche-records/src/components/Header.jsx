@@ -20,13 +20,19 @@ const Header = () => {
           <img src="./logo.webp" width={100} alt="" />
         </Link>
         <nav class="flex items-center lg:pl-20" ref={navRef}>
-          <Link to="/" title="releases" class="hover-underline-animation ">
+          <Link
+            to="/"
+            title="releases"
+            class="hover-underline-animation onClick={showNavbar}"
+            onClick={showNavbar}
+          >
             releases
           </Link>
           <Link
             to="/podcasts"
             title="podcasts"
             class="hover-underline-animation lg:ml-5"
+            onClick={showNavbar}
           >
             podcasts
           </Link>
@@ -34,6 +40,7 @@ const Header = () => {
             to="/events"
             title="events"
             class="hover-underline-animation lg:ml-5"
+            onClick={showNavbar}
           >
             events
           </Link>
@@ -41,6 +48,7 @@ const Header = () => {
             to="/about"
             title="about"
             class="hover-underline-animation lg:ml-5"
+            onClick={showNavbar}
           >
             about
           </Link>
@@ -48,6 +56,7 @@ const Header = () => {
             href="mailto:kocherecords@gmail.com"
             title="contact"
             class="hover-underline-animation lg:ml-5"
+            onClick={showNavbar}
           >
             contact
           </a>

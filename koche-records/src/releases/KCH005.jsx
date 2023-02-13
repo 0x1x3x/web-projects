@@ -1,7 +1,7 @@
 import ReactImageMagnify from "react-image-magnify";
 
-const KCH003 = () => {
-  const coverImage = "/img/albums/dreimal-t.jpg";
+const KCH005 = () => {
+  const coverImage = "/img/albums/fourm.jpg";
   return (
     <section>
       <div class="flex justify-between items-center flex-wrap mx-10 lg:pt-[70px] lg:flex-nowrap ">
@@ -9,7 +9,7 @@ const KCH003 = () => {
           <ReactImageMagnify
             {...{
               smallImage: {
-                alt: "Ambient Works",
+                alt: "Satellites ",
                 isFluidWidth: true,
                 src: coverImage,
               },
@@ -22,37 +22,37 @@ const KCH003 = () => {
           />
         </div>
         <div class="mb-4 lg:hidden">
-          <img src={coverImage} alt="Ambient Works" class="image" />
+          <img src={coverImage} alt="Satellites " class="image" />
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">Dreimal T</h2>
-          <p>Ambient Works [KCH003]</p>
+          <h2 class="font-medium">FOURM</h2>
+          <p>Satellites [KCH005]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
-            In the third release Dreimal T delivers us his atmospheric and very
-            detailed music in EP, called Ambient Works. Dreimal-T, is an alias
-            of Tom-Tino Teichmann, German based dj and sound producer, focused
-            on very deep and detailed sounds, he always searching for the new
-            ways to deserve his music higher and higher.
+            Koche Records is happy to announce the fifth release by FOURM. FOURM
+            is a project by Simon Vince - U.K based electronic producer & visual
+            artist. Deep sounds of these tracks provide listeners to the space,
+            truly the aesthetics of classic Minimal and Deeptech sounds open a
+            mind for a new sophistic universe.
           </p>
           <div className="bandcamp-player">
             <iframe
               title="ttt"
               class="w-full border-0"
               height={120}
-              src="https://bandcamp.com/EmbeddedPlayer/album=1479455371/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=none/transparent=true/"
+              src="https://bandcamp.com/EmbeddedPlayer/album=4259612428/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=none/transparent=true/"
               seamless
             >
-              <a href="https://kocherecords.bandcamp.com/album/ambient-works">
-                Ambient Works by Dreimal T
+              <a href="https://kocherecords.bandcamp.com/album/satellites">
+                Satellites by FOURM
               </a>
             </iframe>
           </div>
-          <div class="py-4 lg:pt-[60px]">
+          <div class="py-4 lg:pt-[70px]">
             <div>
               Listen on{" "}
               <a
-                href="https://soundcloud.com/kocherecords/sets/dreimal-t-ambient-works-kch003"
+                href="https://soundcloud.com/kocherecords/sets/fourm-satellites-kch005"
                 class="hover-underline-animation"
               >
                 SoundCloud
@@ -61,7 +61,7 @@ const KCH003 = () => {
             <div>
               Buy on{" "}
               <a
-                href="https://www.beatport.com/release/ambient-works/3548469"
+                href="www.beatport.com/release/satellites/3662154"
                 class="hover-underline-animation"
               >
                 Beatport
@@ -74,4 +74,4 @@ const KCH003 = () => {
   );
 };
 
-export default KCH003;
+export default KCH005;

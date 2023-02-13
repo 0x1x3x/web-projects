@@ -12,7 +12,6 @@ video {
 
 * {
   box-sizing: border-box;
-  /* cursor: url("/./public/img/cursor-hand.cur"), default; */
 }
 
 h1 {
@@ -70,7 +69,6 @@ section {
 .nav-btn {
   padding: 10px 5px;
   cursor: pointer;
-  /* cursor: url("./img/hands-cursor.png"), pointer; */
   display: none;
   font-size: 1.5rem;
 }
@@ -103,9 +101,9 @@ section {
 
   .nav-close-btn {
     position: absolute;
-    top: 42px;
-    right: 40px;
-    font-size: 1.5rem;
+    top: 20px;
+    right: 30px;
+    font-size: 1.9rem;
   }
 
   nav a {
