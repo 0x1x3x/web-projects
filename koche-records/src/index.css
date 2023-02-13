@@ -31,8 +31,11 @@ body {
 }
 
 section {
-  padding-top: 0;
-  min-height: 800px;
+  padding-top: 1rem;
+  width: 100%;
+  max-width: 1680px;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .image {
