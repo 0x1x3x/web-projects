@@ -26,7 +26,7 @@ const KCH006 = () => {
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">Kirill Torno</h2>
+          <h2 class="font-medium pt-2">Kirill Torno</h2>
           <p>Belka [KCH006]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
             In the sixth releas on Koche Records, producer Kirill Torno,

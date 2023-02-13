@@ -26,7 +26,7 @@ const KCH002 = () => {
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">Canteloop</h2>
+          <h2 class="font-medium pt-2">Canteloop</h2>
           <p>Fake Boundaries [KCH002]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
             In the second release on Koche records we will present a

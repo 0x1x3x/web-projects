@@ -26,7 +26,7 @@ const KCH004 = () => {
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">Eugene Schieffer</h2>
+          <h2 class="font-medium pt-2">Eugene Schieffer</h2>
           <p>Orchidea [KCH004]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
             "Orchidea" includes two single tracks from Eugene with the strongest

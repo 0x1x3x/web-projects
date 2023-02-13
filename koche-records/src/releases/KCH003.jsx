@@ -26,7 +26,7 @@ const KCH003 = () => {
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">Dreimal T</h2>
+          <h2 class="font-medium pt-2">Dreimal T</h2>
           <p>Ambient Works [KCH003]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
             In the third release Dreimal T delivers us his atmospheric and very

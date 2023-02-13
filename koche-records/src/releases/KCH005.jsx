@@ -26,7 +26,7 @@ const KCH005 = () => {
         </div>
 
         <div class="lg:pl-[209px] md:pb-4 z-50">
-          <h2 class="font-medium">FOURM</h2>
+          <h2 class="font-medium pt-2">FOURM</h2>
           <p>Satellites [KCH005]</p>
           <p class="text-justify py-5 lg:mr-[150px]">
             Koche Records is happy to announce the fifth release by FOURM. FOURM
