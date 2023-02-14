@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <section>
-      <div class="flex justify-between items-center flex-wrap mx-10 pb-8 lg:flex-nowrap lg:pt-10">
+      <div class="flex justify-between items-center flex-wrap mx-10 pb-8 lg:flex-nowrap lg:pt-10 pt-[80px]">
         <div class="mb-4 md:block lg:hidden">
           <img src="/img/about.jpg" alt="" class="image" />
         </div>

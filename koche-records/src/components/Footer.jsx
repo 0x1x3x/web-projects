@@ -25,6 +25,7 @@ const Footer = () => {
             <p>Demos:</p>
             <a
               href="mailto:kocherecords@gmail.com"
+              target="blank"
               class="hover-underline-animation"
             >
               <p>kocherecords@gmail.com</p>
@@ -34,6 +35,7 @@ const Footer = () => {
             <p>Art by:</p>
             <a
               href="https://www.fernandobarriosbenavides.com/"
+              target="blank"
               class="hover-underline-animation"
             >
               <p>Fernando Barrios Benavides</p>
@@ -43,28 +45,35 @@ const Footer = () => {
             <p>Web by:</p>
             <a
               href="https://behindthemeta.xyz"
+              target="blank"
               class="hover-underline-animation"
             >
               <p>Behind the Meta</p>
             </a>
           </div>
           <div class="lg:text-right">
-            <a href="https://soundcloud.com/kocherecords">
+            <a href="https://soundcloud.com/kocherecords" target="blank">
               <i class="fa fa-soundcloud"></i>
             </a>
-            <a href="https://www.facebook.com/kocherecords">
+            <a href="https://www.facebook.com/kocherecords" target="blank">
               <i class="fa fa-facebook pl-5"></i>
             </a>
-            <a href="https://open.spotify.com/playlist/2z5OZ40w3AwngbN3SEYBjN?si=80df77ec7e6e4d90">
+            <a
+              href="https://open.spotify.com/playlist/2z5OZ40w3AwngbN3SEYBjN?si=80df77ec7e6e4d90"
+              target="blank"
+            >
               <i class="fa fa-spotify  pl-5"></i>
             </a>
-            <a href="https://instagram.com/kocherecords">
+            <a href="https://instagram.com/kocherecords" target="blank">
               <i class="fa fa-instagram pl-5"></i>
             </a>
-            <a href="https://kocherecords.bandcamp.com">
+            <a href="https://kocherecords.bandcamp.com" target="blank">
               <i class="fa fa-bandcamp pl-5"></i>
             </a>
-            <a href="https://www.beatport.com/label/koche-records/89799">
+            <a
+              href="https://www.beatport.com/label/koche-records/89799"
+              target="blank"
+            >
               <i class="fa fa-headphones social-icon pl-5"></i>
             </a>
             <p class="text-xs">© 2023 Koche Records. All rights reserved.</p>

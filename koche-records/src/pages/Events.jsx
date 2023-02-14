@@ -1,7 +1,7 @@
 const Events = () => {
   return (
     <section>
-      <div class="pt-10 mx-10 h-screen lg:h-full">
+      <div class="mx-10 h-screen lg:h-full pt-[80px] lg:pt-0">
         <p>Events will be announced soon.</p>
       </div>
     </section>
