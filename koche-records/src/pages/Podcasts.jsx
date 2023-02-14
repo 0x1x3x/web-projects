@@ -149,7 +149,7 @@ const Podcasts = () => {
     },
   ];
   return (
-    <section class="md:overflow-auto lg:h-[800px]">
+    <section class="lg:overflow-auto lg:h-[800px]">
       <div class="flex justify-between items-center mx-10 mb-8 flex-wrap gap-y-7 lg:gap-x-52">
         {mixes.map((mix) => (
           <PodcastItem key={mix.name} {...mix} />

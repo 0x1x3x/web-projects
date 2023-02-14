@@ -31,6 +31,7 @@ body {
 }
 
 section {
+  position: relative;
   padding-top: 1rem;
   width: 100%;
   max-width: 1680px;
