@@ -48,7 +48,7 @@ const Footer = () => {
               <p>Behind the Meta</p>
             </a>
           </div>
-          <div class="text-right">
+          <div class="lg:text-right">
             <a href="https://soundcloud.com/kocherecords">
               <i class="fa fa-soundcloud"></i>
             </a>
