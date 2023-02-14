@@ -95,7 +95,7 @@ section {
     gap: 1.5rem;
     background-color: #fff;
     transition: 1s;
-    transform: translateX(-100vh);
+    transform: translateX(+100vh);
     z-index: 500;
   }
 
@@ -111,6 +111,7 @@ section {
   }
 
   nav a {
-    font-size: 1.8rem;
+    font-size: 1.25rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
   }
 }

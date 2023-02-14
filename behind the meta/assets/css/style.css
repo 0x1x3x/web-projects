@@ -449,3 +449,20 @@ h2 {
     display: none;
   }
 }
+
+.img-container {
+  max-width: 600px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: inherit;
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+}
+
+.img-container:hover {
+  cursor: zoom-in;
+}

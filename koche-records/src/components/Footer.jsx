@@ -64,6 +64,7 @@ const Footer = () => {
             <a href="https://www.beatport.com/label/koche-records/89799">
               <i class="fa fa-headphones social-icon pl-5"></i>
             </a>
+            <p class="text-xs">© 2023 Koche Records. All rights reserved.</p>
           </div>
         </div>
       </footer>
