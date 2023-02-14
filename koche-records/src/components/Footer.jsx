@@ -48,18 +48,21 @@ const Footer = () => {
               <p>Behind the Meta</p>
             </a>
           </div>
-          <div>
+          <div class="text-right">
+            <a href="https://soundcloud.com/kocherecords">
+              <i class="fa fa-soundcloud"></i>
+            </a>
             <a href="https://www.facebook.com/kocherecords">
-              <i class="fa fa-facebook social-icon"></i>
+              <i class="fa fa-facebook pl-5"></i>
+            </a>
+            <a href="https://open.spotify.com/playlist/2z5OZ40w3AwngbN3SEYBjN?si=80df77ec7e6e4d90">
+              <i class="fa fa-spotify  pl-5"></i>
             </a>
             <a href="https://instagram.com/kocherecords">
-              <i class="fa fa-instagram social-icon pl-5"></i>
+              <i class="fa fa-instagram pl-5"></i>
             </a>
             <a href="https://kocherecords.bandcamp.com">
-              <i class="fa fa-bandcamp social-icon pl-5"></i>
-            </a>
-            <a href="https://soundcloud.com/kocherecords">
-              <i class="fa fa-soundcloud social-icon pl-5"></i>
+              <i class="fa fa-bandcamp pl-5"></i>
             </a>
             <a href="https://www.beatport.com/label/koche-records/89799">
               <i class="fa fa-headphones social-icon pl-5"></i>
