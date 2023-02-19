@@ -1,11 +1,11 @@
 const About = () => {
   return (
     <section>
-      <div class="flex justify-between items-center flex-wrap mx-10 pb-8 lg:flex-nowrap lg:pt-10 pt-[80px]">
+      <div class="flex justify-between items-center flex-wrap mx-10 pb-8 pt-[80px] lg:flex-nowrap lg:pt-10 ">
         <div class="mb-4 md:block lg:hidden">
           <img src="/img/about.jpg" alt="" class="image" />
         </div>
-        <div class=" z-10 text-justify mb-4 lg:w-[600px] lg:mr-10">
+        <div class="z-10 text-justify mb-4 lg:w-[600px] lg:mr-10">
           <h1 class="pb-4">ABOUT</h1>
           <p class="pb-4">
             Koche Records was launched by{" "}

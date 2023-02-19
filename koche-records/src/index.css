@@ -2,17 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-img,
-video {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
   max-width: 1200px;
   height: auto;
   position: relative;
   z-index: 100;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* svg {
+  width: 100%;
+} */
 
 h1 {
   font-size: 24px;
@@ -28,6 +33,17 @@ body {
   font-family: "Inconsolata", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 500;
+  background-color: white;
+  height: 90px;
+  padding: 1.25rem 2.25rem;
 }
 
 section {
@@ -80,6 +96,7 @@ section {
 @media only screen and (max-width: 912px) {
   .nav-btn {
     display: block;
+    right: 0;
   }
 
   nav {

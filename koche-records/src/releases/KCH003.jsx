@@ -4,7 +4,7 @@ const KCH003 = () => {
   const coverImage = "/img/albums/dreimal-t.jpg";
   return (
     <section>
-      <div class="flex justify-between items-center flex-wrap mx-10 lg:pt-[70px] lg:flex-nowrap ">
+      <div class="flex justify-between items-center flex-wrap mx-10 pt-[80px] lg:flex-nowrap">
         <div class="md:mb-0 hidden lg:block">
           <ReactImageMagnify
             {...{

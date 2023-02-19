@@ -1,3 +1,5 @@
+import AudioPlayer from "./AudioPlayer";
+
 const Footer = () => {
   const hands = {
     position: "relative",
@@ -14,13 +16,12 @@ const Footer = () => {
         <div style={hands} class="hidden md:block z-0"></div>
         <hr />
         <div class="flex justify-between content-center px-10 py-4 flex-col items-center text-center gap-5 md:flex-row md:text-left min-[768px]:text-xs lg:text-base">
-          <div class="hidden md:block">
-            <p>Barcelona</p>
-            <p>Spain</p>
+          <div class="hidden lg:block">
+            <div>
+              <AudioPlayer />
+            </div>
           </div>
-          <div class="md:hidden">
-            <p>Barcelona, Spain</p>
-          </div>
+
           <div>
             <p>Demos:</p>
             <a
@@ -52,31 +53,8 @@ const Footer = () => {
             </a>
           </div>
           <div class="lg:text-right">
-            <a href="https://soundcloud.com/kocherecords" target="blank">
-              <i class="fa fa-soundcloud"></i>
-            </a>
-            <a href="https://www.facebook.com/kocherecords" target="blank">
-              <i class="fa fa-facebook pl-5"></i>
-            </a>
-            <a
-              href="https://open.spotify.com/playlist/2z5OZ40w3AwngbN3SEYBjN?si=80df77ec7e6e4d90"
-              target="blank"
-            >
-              <i class="fa fa-spotify  pl-5"></i>
-            </a>
-            <a href="https://instagram.com/kocherecords" target="blank">
-              <i class="fa fa-instagram pl-5"></i>
-            </a>
-            <a href="https://kocherecords.bandcamp.com" target="blank">
-              <i class="fa fa-bandcamp pl-5"></i>
-            </a>
-            <a
-              href="https://www.beatport.com/label/koche-records/89799"
-              target="blank"
-            >
-              <i class="fa fa-headphones social-icon pl-5"></i>
-            </a>
-            <p class="text-xs">© 2023 Koche Records. All rights reserved.</p>
+            <p class="text-xs">Barcelona, Spain </p>
+            <p class="text-xs">© 2023 Koche Records. All rights reserved</p>
           </div>
         </div>
       </footer>
