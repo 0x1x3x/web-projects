@@ -2,6 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import AudioPlayer from "./AudioPlayer";
 
 const Header = () => {
@@ -62,7 +63,7 @@ const Header = () => {
             about
           </Link>
           <a
-            href="mailto:kocherecords@gmail.com"
+            href="mailto:hello@kocherecords.com"
             target="blank"
             title="contact"
             class="hover-underline-animation lg:ml-5"
@@ -73,6 +74,12 @@ const Header = () => {
           <div class="md:visible lg:hidden mt-[100px] flex flex-row">
             <a href="https://soundcloud.com/kocherecords" target="blank">
               <i class="fa fa-soundcloud"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCDSiw0bawJ0Uv2TnlPhdr0g"
+              target="blank"
+            >
+              <i class="fa fa-youtube-play pl-5"></i>
             </a>
             <a href="https://www.facebook.com/kocherecords" target="blank">
               <i class="fa fa-facebook pl-5"></i>
@@ -110,6 +117,12 @@ const Header = () => {
         <div class="max-[900px]:hidden lg:w-2/6 lg:text-right">
           <a href="https://soundcloud.com/kocherecords" target="blank">
             <i class="fa fa-soundcloud"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCDSiw0bawJ0Uv2TnlPhdr0g"
+            target="blank"
+          >
+            <i class="fa fa-youtube-play pl-5"></i>
           </a>
           <a href="https://www.facebook.com/kocherecords" target="blank">
             <i class="fa fa-facebook pl-5"></i>

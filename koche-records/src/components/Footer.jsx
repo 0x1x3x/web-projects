@@ -25,11 +25,11 @@ const Footer = () => {
           <div>
             <p>Demos:</p>
             <a
-              href="mailto:kocherecords@gmail.com"
+              href="mailto:hello@kocherecords.com"
               target="blank"
               class="hover-underline-animation"
             >
-              <p>kocherecords@gmail.com</p>
+              <p>hello@kocherecords.com</p>
             </a>
           </div>
           <div>

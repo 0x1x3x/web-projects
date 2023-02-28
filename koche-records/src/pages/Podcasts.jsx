@@ -3,6 +3,12 @@ import PodcastItem from "../components/PodcastItem";
 const Podcasts = () => {
   const mixes = [
     {
+      name: "Timbol",
+      desc: "026 Vinyl Only",
+      image: "/img/podcasts/026.png",
+      href: "https://soundcloud.com/kocherecords/koche-podcast-026-timbol-vinyl-only",
+    },
+    {
       name: "Microxika",
       desc: "025 Vinyl Only",
       image: "/img/podcasts/025.jpg",
