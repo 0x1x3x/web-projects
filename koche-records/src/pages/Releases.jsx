@@ -1,5 +1,5 @@
 import AlbumItem from "../components/AlbumItem";
-import { albums } from "./albumsData";
+import { albums } from "../data/albumsData";
 
 const Releases = () => {
   return (

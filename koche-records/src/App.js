@@ -9,12 +9,7 @@ import Podcasts from "./pages/Podcasts.jsx";
 import Events from "./pages/Events.jsx";
 import About from "./pages/About.jsx";
 
-import KCH001 from "./releases/KCH001.jsx";
-import KCH002 from "./releases/KCH002.jsx";
-import KCH003 from "./releases/KCH003.jsx";
-import KCH004 from "./releases/KCH004.jsx";
-import KCH005 from "./releases/KCH005.jsx";
-import KCH006 from "./releases/KCH006.jsx";
+import { KCH001, KCH002, KCH003, KCH004, KCH005, KCH006 } from "./releases";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import PodcastItem from "../components/PodcastItem";
-import { mixes } from "./podcastsData";
+import { mixes } from "../data/podcastsData";
 
 const Podcasts = () => {
   return (
