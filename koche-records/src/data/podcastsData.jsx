@@ -1,5 +1,23 @@
 export const mixes = [
   {
+    name: "Protect",
+    desc: "030",
+    image: "/img/podcasts/030.jpg",
+    href: "https://soundcloud.com/kocherecords/koche-podcast-030-protect",
+  },
+  {
+    name: "Jacques Le Flamand",
+    desc: "029",
+    image: "/img/podcasts/029.jpg",
+    href: "https://soundcloud.com/kocherecords/koche-podcast-029-jacques-le-flamand",
+  },
+  {
+    name: "Sophilia",
+    desc: "028",
+    image: "/img/podcasts/028.jpg",
+    href: "https://soundcloud.com/kocherecords/koche-podcast-028-sophilia",
+  },
+  {
     name: "Volar",
     desc: "027",
     image: "/img/podcasts/027.jpg",

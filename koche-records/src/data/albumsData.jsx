@@ -1,5 +1,17 @@
 export const albums = [
   {
+    name: "Roux",
+    desc: "Beneath The Reef [KCH008]",
+    image: "/img/albums/roux.jpg",
+    href: "/kch008",
+  },
+  {
+    name: "Tredbleu",
+    desc: "Sinergia [KCH007A]",
+    image: "/img/albums/tredbleu.jpg",
+    href: "/kch007",
+  },
+  {
     name: "Kirill Torno",
     desc: "Belka [KCH006]",
     image: "/img/albums/torno.jpg",
@@ -34,5 +46,11 @@ export const albums = [
     desc: "Funny Grass And Sad Kids [KCH001]",
     image: "/img/albums/eugene-schieffer.jpg",
     href: "/kch001",
+  },
+  {
+    name: "",
+    desc: "",
+    image: "",
+    href: "",
   },
 ];

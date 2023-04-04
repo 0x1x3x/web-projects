@@ -8,16 +8,16 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 img {
-  max-width: 1200px;
   height: auto;
   position: relative;
   z-index: 100;
 }
-
-/* svg {
-  width: 100%;
-} */
 
 h1 {
   font-size: 24px;
@@ -55,8 +55,9 @@ section {
   margin: 0 auto;
 }
 
-.image {
-  width: 100%;
+.content-container {
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
 }
 
 /* Underline-Effect */

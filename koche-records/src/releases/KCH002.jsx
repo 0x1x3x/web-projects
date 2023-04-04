@@ -3,9 +3,9 @@ import ReactImageMagnify from "react-image-magnify";
 const KCH002 = () => {
   const coverImage = "/img/albums/canteloop.jpg";
   return (
-    <section>
+    <section class="content-container">
       <div class="flex justify-between items-center flex-wrap mx-10 pt-[80px] lg:flex-nowrap">
-        <div class="md:mb-0 hidden lg:block">
+        <div class="md:mb-0 hidden lg:block lg:max-w-[500px]">
           <ReactImageMagnify
             {...{
               smallImage: {
@@ -22,10 +22,10 @@ const KCH002 = () => {
           />
         </div>
         <div class="mb-4 lg:hidden">
-          <img src={coverImage} alt="Fake Boundaries" class="image" />
+          <img src={coverImage} alt="Fake Boundaries" />
         </div>
 
-        <div class="lg:pl-[209px] md:pb-4 z-50">
+        <div class="lg:w-[70%] lg:pl-[209px] md:pb-4 z-50">
           <h2 class="font-medium pt-2">Canteloop</h2>
           <p>Fake Boundaries [KCH002]</p>
           <p class="text-justify py-5 lg:mr-[150px]">

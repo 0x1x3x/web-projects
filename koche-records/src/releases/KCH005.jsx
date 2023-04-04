@@ -3,9 +3,9 @@ import ReactImageMagnify from "react-image-magnify";
 const KCH005 = () => {
   const coverImage = "/img/albums/fourm.jpg";
   return (
-    <section>
+    <section class="content-container">
       <div class="flex justify-between items-center flex-wrap mx-10 pt-[80px] lg:flex-nowrap">
-        <div class="md:mb-0 hidden lg:block">
+        <div class="md:mb-0 hidden lg:block w-full lg:max-w-[500px]">
           <ReactImageMagnify
             {...{
               smallImage: {
@@ -22,10 +22,10 @@ const KCH005 = () => {
           />
         </div>
         <div class="mb-4 lg:hidden">
-          <img src={coverImage} alt="Satellites " class="image" />
+          <img src={coverImage} alt="Satellites" />
         </div>
 
-        <div class="lg:pl-[209px] md:pb-4 z-50">
+        <div class="lg:w-[70%] lg:pl-[209px] md:pb-4 z-50">
           <h2 class="font-medium pt-2">FOURM</h2>
           <p>Satellites [KCH005]</p>
           <p class="text-justify py-5 lg:mr-[150px]">

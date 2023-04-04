@@ -9,7 +9,16 @@ import Podcasts from "./pages/Podcasts.jsx";
 import Events from "./pages/Events.jsx";
 import About from "./pages/About.jsx";
 
-import { KCH001, KCH002, KCH003, KCH004, KCH005, KCH006 } from "./releases";
+import {
+  KCH001,
+  KCH002,
+  KCH003,
+  KCH004,
+  KCH005,
+  KCH006,
+  KCH007,
+  KCH008,
+} from "./releases";
 
 function App() {
   return (
@@ -26,6 +35,8 @@ function App() {
           <Route exact path="/kch004" element={<KCH004 />} />
           <Route exact path="/kch005" element={<KCH005 />} />
           <Route exact path="/kch006" element={<KCH006 />} />
+          <Route exact path="/kch007" element={<KCH007 />} />
+          <Route exact path="/kch008" element={<KCH008 />} />
 
           <Route exact path="/events" element={<Events />} />
           <Route exact path="/about" element={<About />} />
