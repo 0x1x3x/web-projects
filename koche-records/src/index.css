@@ -14,6 +14,7 @@ body {
 }
 
 img {
+  max-width: none;
   height: auto;
   position: relative;
   z-index: 100;
@@ -30,7 +31,7 @@ h2 {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inconsolata", sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -56,8 +57,15 @@ section {
 }
 
 .content-container {
-  max-height: calc(100vh - 90px);
+  max-height: 100%;
   overflow-y: auto;
+}
+
+@media only screen and (min-width: 780px) {
+  .content-container {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
 }
 
 /* Underline-Effect */
@@ -68,7 +76,7 @@ section {
 }
 
 .hover-underline-animation::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
